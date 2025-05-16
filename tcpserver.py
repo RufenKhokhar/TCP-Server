@@ -51,7 +51,7 @@ def handle_client(conn, addr):
                     logging.info(f"[DISCONNECTED] {addr} sent empty data (connection closed).")
                     break
                 message = data.decode(errors='replace').strip()
-               # logging.info(f"[{addr}] {message}")
+                logging.info(f"[{addr}] {message}")
                 broadcast(data, conn)
 
     except ConnectionResetError:

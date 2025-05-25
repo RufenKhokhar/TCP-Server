@@ -16,6 +16,10 @@ def handle_connect():
 def handle_disconnect():
     print('Client disconnected')
 
+@socketio.on('log')
+def handle_disconnect(data):
+    print(f"logging -> {data}")
+
 @socketio.on('send_message')
 def handle_send_message(data):
     print(f"Received message: {data}")
